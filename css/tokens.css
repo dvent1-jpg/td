@@ -1,0 +1,200 @@
+/* ---------------------------------------------------------------
+   Safelite design tokens
+   Reverse engineered from safelite.com (homepage, audited
+   2026-08-31). Values sampled from the rendered site via computed
+   styles, then named and structured here. Two layers:
+     1. OBSERVED — values as they exist on safelite.com.
+     2. DECK ROLES — semantic aliases tuned for this 1920×1080 stage.
+        Where a deck value interpolates or departs from an observed
+        one, the comment says so.
+   Typeface: Urbanist (Google Fonts) — Safelite's own face, used
+   directly, no substitute needed. Geist Mono remains the deck's
+   functional mono for labels and code; Safelite ships no mono.
+   --------------------------------------------------------------- */
+
+:root {
+  /* ============ 1. OBSERVED ============ */
+
+  /* Ground & surfaces — a light system: white ground, cool-gray
+     section bands, white cards floating on soft shadows */
+  --sl-white: #ffffff;
+  --sl-gray-50: #f5f7fa;          /* cool section band */
+  --sl-gray-100: #f4f4f4;         /* warm section band */
+  --sl-gray-150: #ededed;
+  --sl-gray-200: #e8e9e9;         /* hairlines, ring shadows */
+  --sl-gray-250: #e0e0e0;
+  --sl-gray-300: #dcdcdc;
+  --sl-gray-400: #cacbcc;
+  --sl-gray-500: #8b8d8e;
+  --sl-gray-600: #5e5f61;         /* secondary text */
+  --sl-gray-650: #525656;
+  --sl-gray-700: #4b4c4e;
+  --sl-gray-800: #363c42;
+  --sl-gray-900: #272727;
+  --sl-gray-950: #222222;         /* footer ground */
+  --sl-black: #000000;            /* headings */
+
+  /* Brand colors */
+  --sl-blue: #0070d1;             /* action: buttons, links, tabs */
+  --sl-red: #db0020;              /* the wordmark, and the accent
+                                     word inside black headlines */
+  --sl-red-alt: #da291c;
+  --sl-yellow: #ffc62b;           /* Safelite yellow: rating bars,
+                                     promo accents */
+  /* Excluded from the system: #3860be and #3c7356 sampled on-page
+     but belong to the OneTrust consent widget, not Safelite. The
+     rating stars' dark outline (#765c25) is baked into an SVG
+     asset, not stylesheet CSS, so it lives with the asset. */
+
+  /* Text */
+  --sl-text-primary: #000000;
+  --sl-text-body: #4b4c4e;
+  --sl-text-secondary: #5e5f61;
+  --sl-text-inverse: #ffffff;
+
+  /* Shadows — layered and soft; cards float on the light ground */
+  --sl-shadow-card: 0px 2px 4px rgba(0, 0, 0, 0.32), 0px 4px 12px rgba(0, 0, 0, 0.32);
+  --sl-shadow-card-ring: 0px 0px 0px 2.5px #e8e9e9, 0px 2px 4px rgba(0, 0, 0, 0.32), 0px 4px 12px rgba(0, 0, 0, 0.32);
+  --sl-shadow-soft: 0px 1px 4px rgba(55, 56, 57, 0.08), 0px 1px 2px rgba(55, 56, 57, 0.56);
+  --sl-shadow-ambient: 0px 0px 18px rgba(0, 0, 0, 0.2);
+  --sl-shadow-drop: 0px 8px 8px rgba(0, 0, 0, 0.25);
+
+  /* Radii (observed: 2 / 3 / 8 / 10 / 12 / 14 / 16 / 20 / 24 / 32 / 46 / pill) */
+  --sl-radius-xs: 3px;
+  --sl-radius-sm: 8px;
+  --sl-radius-md: 12px;
+  --sl-radius-lg: 16px;
+  --sl-radius-xl: 24px;
+  --sl-radius-xxl: 32px;
+  --sl-radius-cta: 46px;          /* large CTA rounding */
+  --sl-radius-pill: 800px;
+
+  /* Borders */
+  --sl-border: #e8e9e9;
+  --sl-border-mid: #d1d1d1;
+  --sl-border-strong: #8b8d8e;
+  --sl-border-action: var(--sl-blue);
+
+  /* Motion (observed) — quick and utilitarian; standard ease,
+     150–300ms, 500–750ms for larger moves */
+  --sl-ease-site: ease;
+  --sl-ease-out: ease-out;
+  --sl-ease-in-out: ease-in-out;
+  --sl-dur-micro: 150ms;
+  --sl-dur-quick: 200ms;
+  --sl-dur-standard: 300ms;
+  --sl-dur-slow: 500ms;
+  --sl-dur-slower: 750ms;
+
+  /* Type family — Safelite's actual face, served from Google Fonts */
+  --sl-font-sans: "Urbanist", "Helvetica Neue", Arial, sans-serif;
+  --sl-font-mono: "Geist Mono", "SF Mono", Menlo, monospace; /* deck choice */
+  /* Observed: display 800 at 48px with +1.44px tracking (+0.03em),
+     black on white; h3 700 with +0.03em; body 400; weights in use
+     300–800. Headlines run sentence case with hard periods:
+     "Repair. Replace. Recalibrate." One word inside a headline
+     takes the brand red — the signature accent move. */
+
+  /* ============ 2. DECK ROLES ============ */
+  /* Aliased to the --dk-* names the deck engine and layouts consume,
+     so the slide CSS restyles without a rename sweep. */
+
+  /* Ground: white; raised surfaces are the cool gray band */
+  --dk-bg: var(--sl-white);
+  --dk-bg-raised: var(--sl-gray-50);
+  --dk-surface-1: var(--sl-gray-100);
+  --dk-surface-2: var(--sl-gray-150);
+  --dk-surface-3: var(--sl-gray-200);
+  --dk-foreground: var(--sl-gray-900);
+  --dk-surface-ghost: rgba(0, 112, 209, 0.08);
+
+  /* Text hierarchy — dark on light */
+  --dk-text-primary: var(--sl-black);
+  --dk-text-emphasis: rgba(0, 0, 0, 0.88);
+  --dk-text-soft: var(--sl-gray-700);
+  --dk-text-secondary: var(--sl-gray-600);
+  --dk-text-muted: var(--sl-gray-500);
+
+  /* Borders */
+  --dk-border: var(--sl-gray-200);
+  --dk-border-strong: var(--sl-gray-400);
+  --dk-border-subtle: var(--sl-gray-300);
+  --dk-border-default: var(--sl-gray-500);
+
+  /* Accent roles — red is the headline accent word (the deck's
+     grad-text analog renders flat red); blue is action/wayfinding;
+     yellow is the sparing highlight */
+  --dk-violet: var(--sl-blue);     /* legacy alias: action color */
+  --dk-ember: var(--sl-red);       /* legacy alias: accent color */
+  --dk-blue: var(--sl-blue);
+  --dk-accent-word: var(--sl-red);
+  --dk-grad-accent: linear-gradient(90deg, var(--sl-red) 0%, var(--sl-red) 100%); /* flat: Safelite has no gradients */
+
+  /* Type scale — Safelite ratios (800 display, +0.03em), sized for
+     the 1920×1080 stage */
+  --dk-type-stat: 800 240px/1 var(--sl-font-sans);
+  --dk-type-hero: 800 80px/1.14 var(--sl-font-sans);
+  --dk-type-display-xl: 800 80px/1.1 var(--sl-font-sans);
+  --dk-type-display-lg: 800 60px/1.14 var(--sl-font-sans);
+  --dk-type-display-md: 800 46px/1.2 var(--sl-font-sans);
+  --dk-type-display-sm: 700 34px/1.3 var(--sl-font-sans);
+  --dk-type-body-lg: 400 28px/1.5 var(--sl-font-sans);
+  --dk-type-body-md: 400 22px/1.5 var(--sl-font-sans);
+  --dk-type-body-sm: 400 18px/1.45 var(--sl-font-sans);
+  --dk-eyebrow-size: 19px;
+  --dk-eyebrow-tracking: 2.5px;
+  --dk-display-tracking: 0.03em;   /* observed: positive, unlike VB */
+  --dk-font-sans: var(--sl-font-sans);
+  --dk-font-mono: var(--sl-font-mono);
+
+  /* Radii */
+  --dk-radius-xs: var(--sl-radius-xs);
+  --dk-radius-sm: var(--sl-radius-sm);
+  --dk-radius-md: var(--sl-radius-md);
+  --dk-radius-lg: var(--sl-radius-xl);
+  --dk-radius-card: 20px;    /* their large-card rounding */
+  --dk-radius-pill: var(--sl-radius-pill);
+  --dk-radius-circle: 50%;
+
+  /* Device shadows — deck-authored, re-cut for a light ground:
+     tighter, softer, gray instead of black-on-black */
+  --dk-shadow-device-lg: 0 24px 48px rgba(34, 34, 34, 0.28);
+  --dk-shadow-device-md: 0 18px 36px rgba(34, 34, 34, 0.24);
+  --dk-shadow-device-sm: 0 12px 24px rgba(34, 34, 34, 0.22);
+  --dk-shadow-glow: var(--sl-shadow-card);
+  --dk-shadow-device-glow:
+    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.18))
+    drop-shadow(0 24px 48px rgba(34, 34, 34, 0.28));
+
+  /* Cover glow analog: Safelite is flat, so the blob behind cover
+     devices becomes a soft blue wash, not a gradient bloom */
+  --dk-grad-glow: linear-gradient(140deg, rgba(0, 112, 209, 0.35) 12%, rgba(255, 198, 43, 0.30) 88%);
+
+  /* Stat figures: solid black (no gradient text in this system) */
+  --dk-grad-stat: linear-gradient(180deg, #000000 0%, #000000 100%);
+
+  /* Fades — imagery on a light system dissolves into white */
+  --dk-fade-bottom: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 20%, rgb(255, 255, 255) 100%);
+  --dk-fade-hard: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.94) 68%, rgb(255, 255, 255) 81%);
+  --dk-fade-caption: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.72) 100%); /* dark scrim under card captions stays readable on photos */
+  --dk-fade-mask-vertical: linear-gradient(180deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+  --dk-img-dim: 1;                 /* light system: photography runs full strength */
+
+  /* Spacing rhythm (unchanged deck scale) */
+  --dk-space-1: 8px;
+  --dk-space-2: 16px;
+  --dk-space-3: 24px;
+  --dk-space-4: 40px;
+  --dk-space-5: 64px;
+  --dk-space-6: 96px;
+  --dk-space-7: 144px;
+
+  /* Deck motion — Safelite is brisk; the deck follows at a
+     presentation-safe version of their pace */
+  --dk-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --dk-reveal-duration: 500ms;
+
+  /* Signals */
+  --dk-error: var(--sl-red);
+  --dk-warning: var(--sl-yellow);
+}
