@@ -9,7 +9,7 @@ Unsplash (unsplash.com/license)
   lay-c-restraint.jpg          Jakub Żerdzicki     https://unsplash.com/photos/kPoSgf_cjTk
   lay-c-short.jpg              iSawRed             https://unsplash.com/photos/mD1-NVe3ICM
   lay-c-mid.jpg                Brock Wegner        https://unsplash.com/photos/d-faGdPSjU4
-  lay-c-long.jpg               Victor              https://unsplash.com/photos/oRZDnS2QkuE
+  lay-c-long-panel.jpg         Raymond Sime        https://unsplash.com/photos/UEx6fTODHzI
 
 Supplied images, source and license not verified
   lay-b-engineering.jpg        70443943_l-scaled.jpg
